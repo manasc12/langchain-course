@@ -26,7 +26,7 @@ class AgentResponse(BaseModel):
     )
 
 
-llm = ChatOpenAI(model="gpt-5")
+llm = ChatOpenAI(model="gpt-5.4-nano")
 tools = [TavilySearch()]
 agent = create_agent(model=llm, tools=tools, response_format=AgentResponse)
 
@@ -36,7 +36,7 @@ def main():
     result = agent.invoke(
         {
             "messages": HumanMessage(
-                content="search for 3 job postings for an ai engineer using langchain in the bay area on linkedin and list their details?"
+                content="search for 3 job postings for an ai engineer using langchain in the Greater Bengaluru Area on Google and list their details?"
             )
         }
     )
